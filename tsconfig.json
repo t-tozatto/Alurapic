@@ -5,13 +5,11 @@
   To learn more about this file see: https://angular.io/config/solution-tsconfig.
 */
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
-]
+"compilerOptions": {
+  "outDir": "./dist" /* Redirect output structure to the directory. */,
+  "experimentalDecorators": true, /* Enables experimental support for ES7 decorators. */
+  "emitDecoratorMetadata": true, /* Enables experimental support for emitting type metadata for decorators. */
+  /* Advanced Options */
+  "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+},
 }
