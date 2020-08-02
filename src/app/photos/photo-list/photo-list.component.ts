@@ -32,8 +32,4 @@ export class PhotoListComponent implements OnInit {
       }
     });
   }
-
-  recuperarValor(): string {
-    return 'ELTON LINDO';
-  }
 }
