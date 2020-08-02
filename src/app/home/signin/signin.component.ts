@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../core/auth/auth.service';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { ChangeDetectorRef } from '@angular/core';
 @Component({
     templateUrl: './signin.component.html'
 })
-export class SignInComponent implements OnInit {
+export class SignInComponent implements OnInit, AfterViewInit {
 
     loginForm: FormGroup;
     @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>;
@@ -27,7 +27,6 @@ export class SignInComponent implements OnInit {
         });
     }
 
-    // tslint:disable-next-line: use-lifecycle-interface
     ngAfterViewInit(): void {
         // tslint:disable-next-line: no-unused-expression
         this.platformDetectorService.isPlatformBrowser() &&
@@ -35,8 +34,7 @@ export class SignInComponent implements OnInit {
         this.cdRef.detectChanges();
     }
 
-    // tslint:disable-next-line: typedef
-    login() {
+    login(): void {
         const userName = this.loginForm.get('userName').value;
         const password = this.loginForm.get('password').value;
 

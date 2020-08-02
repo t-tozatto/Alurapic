@@ -20,8 +20,7 @@ export class PhotosComponent implements OnChanges {
       }
   }
 
-  // tslint:disable-next-line: typedef
-  groupColumns(photos: Photo[]) {
+  groupColumns(photos: Photo[]): any[] {
     const newRows = [];
 
     for (let index = 0; index < photos.length; index += 3) {

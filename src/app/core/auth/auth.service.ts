@@ -12,6 +12,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private userService: UserService) { }
 
+  // tslint:disable-next-line: typedef
   authenticate(userName: string, password: string) {
     return this.http.post(API_URL + '/user/login', { userName, password }, { observe: 'response' })
     .pipe(tap(res => {
