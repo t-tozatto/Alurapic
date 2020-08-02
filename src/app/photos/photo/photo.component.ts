@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
-const CLOUD = 'http://localhost:3000/imgs/';
+const API = environment.ApiUrl + '/imgs/';
 
 @Component({
     // tslint:disable-next-line: component-selector
@@ -16,7 +17,7 @@ export class PhotoComponent {
 
     @Input() set url(url: string)  {
         if (!url.startsWith('data')) {
-            this._url = CLOUD + url;
+            this._url = API + url;
         } else {
             this._url = url;
         }
